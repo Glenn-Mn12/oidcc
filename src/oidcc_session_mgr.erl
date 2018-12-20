@@ -54,7 +54,7 @@ stop() ->
 new_session(ProviderId) ->
     gen_server:call(?MODULE, {new_session, ProviderId}).
 
--spec get_session(ID :: uuid:uuid()) -> {ok, pid()}.
+-spec get_session(ID :: uuid:uuid()) -> {ok, pid()} | {error, not_found}.
 get_session(ID) ->
     gen_server:call(?MODULE, {get_session, ID}).
 
